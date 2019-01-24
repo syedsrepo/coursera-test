@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myFirstApp">
 <head>
   <meta charset="utf-8">
-  <title>Hello Coursera</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <title>My First Lesson</title>
 </head>
 <body>
-  <h1>Hello Coursera Students!</h1>
+  <h1>My first Angular application</h1>
+  <div ng-controller="MyFirstController">
+    {{sayHello()}}
+    <input type="text" ng-model = "name">
+    Inside my input is my name :{{name}}
+  </div>
+
+  <div ng-controller="NameCalculatorController">
+      <h1>Name Calculator </h1>
+      <input type="text" ng-model="name" ng-keyup="displayNumeric();">
+      <div>
+        Name calulator value is {{nameValue}}
+      </div>
+  </div>
+
+  <div ng-controller="DIController">
+      <h1>Dependency Injection in JavaScript</h1>
+      <input type="text" ng-model="name" ng-blur="upper();">
+      <div>
+        The modified string is : {{name}}
+      </div>
+  </div>
+
+  <div ng-controller="MinifiController">
+      <h1>Minification Workaround</h1>
+      <input type="text" ng-model="name" ng-blur="upper();">
+      <div>
+        The modified string is : {{name}}
+      </div>
+  </div>
+
+
+  <div ng-controller="FoodController">
+      <h1>Angular Expression and Interpolation</h1>
+      <button ng-click="getHealthy()">Get Healthy </button>
+      <br></br>
+      <div>
+        <img ng-src="{{foodImage}}.jpg">
+      </div>
+  </div>
+
+
 </body>
 </html>
